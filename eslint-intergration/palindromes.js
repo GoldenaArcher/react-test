@@ -1,3 +1,3 @@
 module.exports = (str) => {
-  return str.split().reverst().join('');
+  return str.split().reverse().join('');
 };
