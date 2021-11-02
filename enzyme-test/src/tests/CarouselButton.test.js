@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CarouselButton from '../carouselButton';
+import CarouselButton from '../CarouselButton';
 
 describe('CarouselButton', () => {
   const text = 'Button text';
