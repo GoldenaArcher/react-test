@@ -1,6 +1,6 @@
 {
   "plugins": ["react"],
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:react/jsx-runtime"],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
