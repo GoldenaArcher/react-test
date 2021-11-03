@@ -13,7 +13,7 @@ const Carousel = props => {
   };
 
   const handleNextClick = () => {
-    setSlideIndex((slides.length + 1) % slides.length);
+    setSlideIndex((slideIndex + 1) % slides.length);
   };
 
   return (
