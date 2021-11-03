@@ -14,13 +14,15 @@
     }
   },
   "env": {
-    "node": true
+    "node": true,
+    "browser": true
   },
   "rules": {
     "quotes": ["error", "single", { "avoidEscape": true }],
     "no-console": "warn",
     "no-unused-vars": "warn",
-    "react/jsx-uses-react": "error"
+    "react/jsx-uses-react": "error",
+    "react/prop-types": "off"
   },
   "settings": {
     "react": {
