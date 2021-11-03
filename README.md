@@ -18,4 +18,4 @@ The study projects from Educative.
 
   May not be 100% correct with the FP testing.
 
-- [ ] t
+- [ ] Styling in JavaScript with Styled-Components

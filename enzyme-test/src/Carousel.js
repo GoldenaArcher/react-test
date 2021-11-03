@@ -4,7 +4,7 @@ import CarouselSlide from './CarouselSlide';
 import CarouselButton from './CarouselButton';
 
 const Carousel = props => {
-  const { slides, ...rest } = props;
+  const { slides, defaultImgHeight, ...rest } = props;
 
   const [slideIndex, setSlideIndex] = useState(0);
 
@@ -18,7 +18,7 @@ const Carousel = props => {
 
   return (
     <div {...rest}>
-      <CarouselSlide {...slides[slideIndex]} />
+      <CarouselSlide imgHeight={defaultImgHeight} {...slides[slideIndex]} />
       <CarouselButton data-action="prev" onClick={handlePrevClick}>
         Prev
       </CarouselButton>
@@ -29,7 +29,12 @@ const Carousel = props => {
   );
 };
 
+Carousel.defaultProps = {
+  defaultImgHeight: CarouselSlide.defaultProps.imgHeight
+};
+
 Carousel.propTypes = {
+  defaultImgHeight: CarouselSlide.propTypes.imgHeight,
   slides: PropTypes.arrayOf(PropTypes.shape(CarouselSlide.propTypes)).isRequired
 };
 
