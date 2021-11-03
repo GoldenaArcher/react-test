@@ -36,7 +36,10 @@ describe('Carousel', () => {
   it('renders the current slide as a CarouselSlide', () => {
     let slideProps;
     slideProps = wrapper.find(CarouselSlide).props();
-    expect(slideProps).toEqual(slides[0]);
+    expect(slideProps).toEqual({
+      ...slides[0],
+      ...CarouselSlide.defaultProps
+    });
   });
 
   it('renders a CarouselButton labeled "Prev" ', () => {
@@ -62,7 +65,10 @@ describe('Carousel', () => {
     // next
     buttons.at(1).simulate('click');
     let slideProps = wrapper.find(CarouselSlide).props();
-    expect(slideProps).toEqual(slides[1]);
+    expect(slideProps).toEqual({
+      ...slides[1],
+      ...CarouselSlide.defaultProps
+    });
   });
 
   it('render next slide once `prev` is clicked', () => {
@@ -70,6 +76,9 @@ describe('Carousel', () => {
     // next
     buttons.at(0).simulate('click');
     let slideProps = wrapper.find(CarouselSlide).props();
-    expect(slideProps).toEqual(slides[slides.length - 1]);
+    expect(slideProps).toEqual({
+      ...slides[slides.length - 1],
+      ...CarouselSlide.defaultProps
+    });
   });
 });
