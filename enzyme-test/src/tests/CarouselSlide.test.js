@@ -1,12 +1,11 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import CarouselSlide from '../CarouselSlide';
 import styled from 'styled-components';
-import toJson from 'enzyme-to-json';
 import renderer from 'react-test-renderer';
 
 describe('CarouselSlide', () => {
-  let wrapper, mounted;
+  let wrapper;
   const imgUrl = 'https://example.com/image.png';
 
   beforeEach(() => {

@@ -18,4 +18,12 @@ The study projects from Educative.
 
   May not be 100% correct with the FP testing.
 
-- [ ] Styling in JavaScript with Styled-Components
+- [x] Styling in JavaScript with Styled-Components
+
+  Refer to the `enzyme-test`.
+
+  ❌ Note that the testing for styled-component is somewhat incomplete. The original articla studied on how to compolete styled-component in class-based-component, yet not touched the functional component.
+
+- [ ] Refactoring with HOC
+
+  The Hook implementation might be able to bypass the HOC within this version. For example, instead of wrapping components with components, potentially we can write some smaller functional component to change the props or internal state.
