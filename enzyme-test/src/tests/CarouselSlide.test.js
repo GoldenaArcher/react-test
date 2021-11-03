@@ -1,21 +1,39 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import CarouselSlide from '../CarouselSlide';
 import styled from 'styled-components';
+import toJson from 'enzyme-to-json';
+import renderer from 'react-test-renderer';
 
 describe('CarouselSlide', () => {
-  let wrapper, styledImage;
+  let wrapper, mounted;
   const imgUrl = 'https://example.com/image.png';
 
   beforeEach(() => {
+    // const Img = CarouselSlide.defaultProps.Img;
+    // mounted = mount(<Img src={imgUrl} imgHeight={500} />);
     wrapper = shallow(
       <CarouselSlide imgUrl={imgUrl} description="Default test image" />
     );
-    styledImage = styled.img;
   });
 
   it('renders a <figure>', () => {
     expect(wrapper.type()).toBe('figure');
+  });
+
+  describe('Img', () => {
+    it('allows styles to be overridden', () => {
+      const TestImg = styled.img`
+        width: auto;
+        height: auto;
+        object-fit: fill;
+      `;
+
+      const tree = renderer.create(<TestImg />).toJSON();
+      expect(tree).toMatchSnapshot();
+      // console.log(tree);
+      // expect(tree.prop('src')).toBe(imgUrl);
+    });
   });
 
   it('renders an <img> and a <figcaption> as children', () => {
@@ -25,7 +43,6 @@ describe('CarouselSlide', () => {
 
   it('pases `imgUrl` through to the <img>', () => {
     // wrapper.setProps({ imgUrl });
-
     // const img = wrapper.find(styledImage);
     // expect(img.prop('src')).toBe(imgUrl);
   });
