@@ -1,7 +1,0 @@
-{
-  "plugins": ["jest", "enzyme"],
-  "extends": ["plugin:jest/recommended"],
-  "env": {
-    "jest": true
-  }
-}
